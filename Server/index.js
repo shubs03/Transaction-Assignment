@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    const allowedOrigins =["http://localhost:3000","*","https://roxiler-assignment-two.vercel.app"]
+    const allowedOrigins =["http://localhost:3000","*","https://transaction-assignment-dusky.vercel.app/"]
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
       res.setHeader('Access-Control-Allow-Origin', origin);
@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE, PATCH");
     next();
     });
-    
+
 app.use(bodyParser.json());
 
 app.use("/api/products", apiRoutes);
